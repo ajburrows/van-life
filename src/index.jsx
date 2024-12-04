@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <Link to="/">#VANLIFE</Link>
+        <Link to="/" className='home-link'>#VANLIFE</Link>
         <nav>
           <Link to="/about">About</Link>
         </nav>
@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <footer>&copy; 2022 #VANLIFE</footer>
     </BrowserRouter>
   )
 }
