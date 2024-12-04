@@ -13,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 30px;
 }
 
 
@@ -47,15 +47,15 @@ nav > a {
   color: white;
 }
 .home-container > h1 {
-  font-size: 64px;
+  font-size: 54px;
 }
 .home-container > p {
-  font-size: 32px;
+  font-size: 28px;
   max-width: 75%;
   margin-bottom: 100px;
 }
 
-.home-container > button {
+.home-container > a {
   background-color: #FF8C38;
   font-size: 28px;
   font-weight: 700;
@@ -63,7 +63,19 @@ nav > a {
   border: none;
   width: 75%;
   padding: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* ABOUT PAGE */
+
+.about-page-hero-container {
+  height: 550px;
+  overflow: hidden;
+}
+.about-page-hero {
+  width: 100%;
 }
 
 footer {
@@ -71,7 +83,7 @@ footer {
   align-items: center;
   justify-content: center;
   background-color: #252525;
-  height: 100px;
+  height: 85px;
   color: #AAAAAA;
 }
 
