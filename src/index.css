@@ -145,9 +145,9 @@ nav > a {
     max-width: 750px;
 }
 
-.van-card a {
+.van-card > a {
     color: #161616;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .van-card img {
@@ -219,6 +219,76 @@ nav > a {
     border: none;
     border-radius: 5px;
 }
+
+
+/* VAN DETAILS PAGE */
+.van-details-return-link {
+  color:#4D4D4D;
+  text-decoration: none;
+  margin: 30px;
+}
+.van-details-container {
+  justify-self: center;
+  display: flex;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+
+.van-details-container > img {
+  width: 30vw;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.van-details-container .info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.van-details-container .info-container > i {
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.5vw;
+  border-radius: 10px;
+  margin-bottom: 0px;
+}
+
+.van-details-container .info-container > h1 {
+  font-size: 3vw;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.van-details-container .info-container > h3 {
+  font-size: 2vw;
+  margin-top: 0px;
+}
+
+.van-details-container .info-container > h3 > span {
+  font-weight: 400;
+}
+
+.van-details-container .info-container .description-text {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+.van-details-container .info-container > a {
+  text-decoration: none;
+  color: white;
+  background-color: #FF8C38;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+
 
 footer {
   display: flex;
