@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, Outlet, useParams, NavLink } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 export default function HostVanDetails() {
@@ -11,10 +11,10 @@ export default function HostVanDetails() {
             .then(data => setVan(data.vans[0]))
     }, [])
 
-    const navLinkStyle = (isActive) => {
-        return (
-            isActive ? {textDecoration: "underline"} : {textDecoration: "none"}
-        )
+    const navLinkStyle = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
     }
 
     if (!van){
@@ -24,7 +24,7 @@ export default function HostVanDetails() {
     return (
         <div className="hvd-main">
             <div className="hvd-container">
-                <Link to="/host/vans/">&larr; Back to all vans</Link>
+                <Link to=".." relative="path">&larr; Back to all vans</Link>
                 <div className="hvd-content">
                     <header className="hvd-header">
                         <img src={van.imageUrl} />
@@ -35,11 +35,12 @@ export default function HostVanDetails() {
                         </div>
                     </header>
                     <nav>
-                        <Link style={navLinkStyle()} to="">Details</Link>
-                        <Link style={navLinkStyle()} to="pricing">Pricing</Link>
-                        <Link style={navLinkStyle()} to="photos">Photos</Link>
+                        <NavLink end style={({ isActive }) => isActive ? navLinkStyle : null} to=".">Details</NavLink>
+                        <NavLink style={({isActive}) => isActive ? navLinkStyle : null} to="photos">Photos</NavLink>
+                        <NavLink style={({isActive}) => isActive ? navLinkStyle : null} to="pricing">Pricing</NavLink>
                     </nav>
                 </div>
+                <Outlet />
             </div>
         </div>
     )
