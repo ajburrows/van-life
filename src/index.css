@@ -436,6 +436,21 @@ nav > a {
   font-weight: 400;
 }
 
+/* Host Van Price Component */
+.host-van-price-container {
+  padding: 30px;
+}
+
+.host-van-price-container > p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.host-van-price-container > p > span {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
 /* FOOTER */
 
 footer {
