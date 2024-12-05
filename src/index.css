@@ -288,17 +288,6 @@ nav > a {
   border-radius: 6px;
 }
 
-
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #252525;
-  height: 85px;
-  color: #AAAAAA;
-}
-
 .host-nav {
     display: flex;
 }
@@ -318,4 +307,66 @@ footer {
 
 .active-link {
   text-decoration: underline;
+}
+
+
+/* HOST VAN PAGE */
+.host-van-main {
+  display: flex;
+  justify-content: center;
+}
+
+.host-van-container {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding: 50px;
+}
+
+.host-van-container > h1 {
+  font-size: 2vw;
+}
+
+.host-van-card {
+  display: flex;
+  background-color: white;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  margin: 1vh;
+}
+
+.host-van-card > img {
+  border-radius: 6px;
+  height: 20vh;
+}
+
+.host-van-card > div {
+  margin-left: 3vh;
+}
+
+.host-van-card > div > h3 {
+  font-size: 1.5vw;
+  margin: 0px;
+  margin-bottom: 5px;
+  color: #161616;
+}
+
+.host-van-card > div > p {
+  font-size: 1.2vw;
+  margin: 0px;
+  margin-top: 5px;
+  color: #4D4D4D;
+
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #252525;
+  height: 85px;
+  color: #AAAAAA;
 }
