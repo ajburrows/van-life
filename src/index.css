@@ -427,6 +427,7 @@ nav > a {
 /* Host Van Info Component */
 .host-van-info {
   padding: 30px;
+  padding-top: 0px;
 }
 .host-van-info > p {
   font-weight: 800;
@@ -438,17 +439,28 @@ nav > a {
 
 /* Host Van Price Component */
 .host-van-price-container {
-  padding: 30px;
+  padding: 0px 30px;
 }
 
 .host-van-price-container > p {
   font-size: 2rem;
+  margin-top: 0px;
   font-weight: 700;
 }
 
 .host-van-price-container > p > span {
   font-weight: 300;
   font-size: 1.5rem;
+}
+
+/* Host Van Pictures Component */
+.host-van-pictures-container {
+  display: flex;
+  padding: 10px 30px 30px 30px;
+}
+
+.host-van-pictures-container > img {
+  width: 8vw;;
 }
 
 /* FOOTER */
