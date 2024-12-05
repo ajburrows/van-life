@@ -1,5 +1,5 @@
-import React from "react"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function HostVans() {
     const [vans, setVans] = useState([])
@@ -13,13 +13,16 @@ export default function HostVans() {
 
     const vansElements = vans.map((vanObj) => {
         return (
+        <Link style={{textDecoration: "none"}} to={vanObj.id}>
             <div className="host-van-card">
-                <img src={vanObj.imageUrl} />
-                <div>
-                    <h3>{vanObj.name}</h3>
-                    <p>${vanObj.price}/day</p>
-                </div>
+                    <img src={vanObj.imageUrl} />
+                    <div>
+                        <h3>{vanObj.name}</h3>
+                        <p>${vanObj.price}/day</p>
+                    </div>
             </div>
+        </Link>
+        
     )})
 
     return (
