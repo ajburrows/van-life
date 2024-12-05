@@ -382,11 +382,14 @@ nav > a {
   flex-direction: column;
   background-color: white;
   margin-top: 20px;
+  max-width: 800px;
 }
 
 .hvd-header {
   box-shadow: none;
   background-color: inherit;
+  display: flex;
+  justify-content: left;
 }
 .hvd-header > img {
   width: 20vw;
@@ -417,6 +420,21 @@ nav > a {
   font-weight: 400;
 }
 
+.hvd-content > nav {
+  padding: 20px;
+}
+
+/* Host Van Info Component */
+.host-van-info {
+  padding: 30px;
+}
+.host-van-info > p {
+  font-weight: 800;
+}
+
+.host-van-info > p > span {
+  font-weight: 400;
+}
 
 /* FOOTER */
 
