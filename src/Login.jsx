@@ -20,8 +20,9 @@ export default function Login() {
                     setError({message: "Account does not exist"})
                 }
                 else {
+                    localStorage.setItem("loggedin", true)
                     setError(null)
-                    navigate("/host")
+                    navigate("/host", { replace: true })
                 }
             })
             .finally(() => {
