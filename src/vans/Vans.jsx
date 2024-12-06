@@ -1,37 +1,51 @@
 import { useState, useEffect } from "react"
 import { Link, useSearchParams } from "react-router-dom"
+import { getVans } from "../api"
 
 
 export default function Vans() {
     const [vans, setVans] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const typeFilter = searchParams.get("type")
 
     useEffect(() => {
-        fetch("api/vans")
-            .then(resp => resp.json())
-            .then(data => {
-                setVans(data.vans)
-            })
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVans()
+                setVans(data)
+            } catch(err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        
+        loadVans()
     }, [])
 
     const filteredVans = typeFilter
         ? vans.filter(van => van.type === typeFilter)
         : vans
 
-    const vanElements = filteredVans.map(vanObj => (
-        <div key={vanObj.id} className="van-card">
-            <Link to={vanObj.id} state={{ search: searchParams.toString() }}>
-                <img src={vanObj.imageUrl} />
-                <div className="van-info">
-                    <h3>{vanObj.name}</h3>
-                    <p>${vanObj.price}<span>/day</span></p>
-                </div>
-                <i className={`van-type ${vanObj.type} selected`}>{vanObj.type}</i>
-            </Link>
-        </div>
-    ))
+
+    const vanElements = filteredVans
+        ?filteredVans.map(vanObj => (
+            <div key={vanObj.id} className="van-card">
+                <Link to={vanObj.id} state={{ search: searchParams.toString() }}>
+                    <img src={vanObj.imageUrl} />
+                    <div className="van-info">
+                        <h3>{vanObj.name}</h3>
+                        <p>${vanObj.price}<span>/day</span></p>
+                    </div>
+                    <i className={`van-type ${vanObj.type} selected`}>{vanObj.type}</i>
+                </Link>
+            </div>
+        ))
+        : null
 
     function getSelectedClassname(type) {
         if (typeFilter == null || typeFilter.toLocaleLowerCase() !== type){
@@ -40,6 +54,12 @@ export default function Vans() {
         return " selected"
     }
 
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
     return (
         <div className="van-main">
             <div className="van-list-container">
