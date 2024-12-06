@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Vans from './pages/Vans';
-import VanDetail from './pages/VanDetail';
+import Vans from './vans/Vans';
+import VanDetail from './vans/VanDetail';
 import Layout from "./components/Layout"
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
@@ -17,6 +17,7 @@ import "./server"
 import HostVanInfo from './pages/Host/HostVanInfo';
 import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVanPhotos from './pages/Host/HostVanPhotos';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -38,8 +39,9 @@ function App() {
               <Route path="pricing" element={<HostVanPricing />} />
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
-
           </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

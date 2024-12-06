@@ -475,6 +475,30 @@ nav > a {
   border-radius: 5px;
 }
 
+/* NOT FOUND PAGE */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.not-found-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found-content > a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
 /* FOOTER */
 
 footer {
