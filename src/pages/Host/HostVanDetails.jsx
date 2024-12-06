@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 export default function HostVanDetails() {
     const vanId = useParams()
     const [van, setVan] = useState({})
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         fetch(`/api/host/vans/${vanId.id}`)

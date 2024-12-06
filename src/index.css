@@ -505,6 +505,13 @@ nav > a {
 }
 
 /* LOGIN PAGE */
+.login-first {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  color: red;
+  font-weight: 300;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
