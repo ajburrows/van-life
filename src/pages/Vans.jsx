@@ -16,18 +16,13 @@ export default function Vans() {
             })
     }, [])
 
-    function filterVans(vans){
-        if (typeFilter !== null){
-            let tmp = vans.filter(vanObj => vanObj.type.toLowerCase() === typeFilter.toLowerCase() ? vanObj : null)
-            return tmp 
-        }
-        return vans
-    }
-    const filteredVans = filterVans(vans)
+    const filteredVans = typeFilter
+        ? vans.filter(van => van.type === typeFilter)
+        : vans
 
     const vanElements = filteredVans.map(vanObj => (
         <div key={vanObj.id} className="van-card">
-            <Link to={`${vanObj.id}`}>
+            <Link to={vanObj.id} state={{ search: searchParams.toString() }}>
                 <img src={vanObj.imageUrl} />
                 <div className="van-info">
                     <h3>{vanObj.name}</h3>
