@@ -1,6 +1,7 @@
+import React from "react"
 import { Link, useParams, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { getVans } from "../../api"
+import { getVan } from "../../api"
 
 export default function VanDetail() {
     const [van, setVan] = useState({})
@@ -10,13 +11,17 @@ export default function VanDetail() {
     const location = useLocation()
 
     const params = useParams()
+
     useEffect(() => {
-        fetch(`/api/vans/${params.id}`)
-            .then(resp => resp.json())
-            .then(obj => setVan(obj.vans))
+        async function loadVans() {
+            setLoading(true)
+            const data = await getVan(params.id)
+            setVan(data)
+        }
+        loadVans()
     }, [params.id])
 
-    const searchFilter = `${location.state.search ? `?${location.state.search}` : ""}`
+    const searchFilter = `${location?.state?.search ? `?${location.state.search}` : ""}`
     return (
         <>
         {van

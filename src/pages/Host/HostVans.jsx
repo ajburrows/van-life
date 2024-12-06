@@ -7,12 +7,28 @@ export default function HostVans() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
+    /*
     useEffect(() => {
         fetch("/api/host/vans")
             .then(resp => resp.json())
             .then(data => setVans(data.vans))
     } ,[])
+    */
 
+    useEffect(() => {
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans()
+                setVans(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
+    }, [])
 
     const vansElements = vans.map((vanObj) => {
         return (
@@ -27,6 +43,15 @@ export default function HostVans() {
         </Link>
         
     )})
+
+    
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
 
     return (
         <div className="host-van-main">
