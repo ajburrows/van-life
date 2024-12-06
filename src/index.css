@@ -136,6 +136,70 @@ nav > a {
     margin-bottom: 50px;
 }
 
+.filter-container {
+  display: flex;
+}
+
+.van-type {
+    height: 34px;
+    padding: 6px 26px;
+    margin-left: 20px;
+
+    font-style: normal;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.van-type.simple {
+  margin-left: 0px;
+}
+
+.van-type:hover {
+    color: #FFEAD0;
+}
+
+.van-type:focus {
+    outline: none;
+}
+
+.van-type.selected {
+    color: #FFEAD0;
+}
+
+.van-type.simple:hover, .van-type.simple.selected {
+    background-color: #E17654;
+}
+
+.van-type.rugged:hover, .van-type.rugged.selected {
+    background-color: #115E59;
+}
+
+.van-type.luxury:hover, .van-type.luxury.selected {
+    background-color: #161616;
+}
+
+.van-type.clear-filters {
+    margin-left: 0px;
+    padding: 6px 26px;
+    height: 34px;
+
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #4D4D4D;
+    background-color: transparent;
+
+    border: none;
+    border-radius: 5px;
+}
+
 .van-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -164,60 +228,6 @@ nav > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.van-type {
-    height: 34px;
-    padding: 6px 26px;
-
-    font-style: normal;
-    font-weight: 500;
-
-    border: none;
-    border-radius: 5px;
-    background-color: #FFEAD0;
-
-    color: #4D4D4D;
-    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.van-type:hover {
-    color: #FFEAD0;
-}
-
-.van-type:focus {
-    outline: none;
-}
-
-.van-type.selected {
-    color: #FFEAD0;
-}
-
-.van-type.simple:hover, .van-type.simple.selected {
-    background-color: #E17654;
-}
-
-.van-type.rugged:hover, .van-type.rugged.selected {
-    background-color: #115E59;
-}
-
-.van-type.luxury:hover, .van-type.luxury.selected {
-    background-color: #161616;
-}
-
-.van-type.clear-filters {
-    margin-left: -20px;
-    padding: 6px 26px;
-    height: 34px;
-
-    font-style: normal;
-    font-weight: 500;
-    text-decoration: underline;
-    color: #4D4D4D;
-    background-color: transparent;
-
-    border: none;
-    border-radius: 5px;
 }
 
 
@@ -388,11 +398,12 @@ nav > a {
 .hvd-header {
   box-shadow: none;
   background-color: inherit;
-  display: flex;
+  display: flex;;
   justify-content: left;
 }
 .hvd-header > img {
   width: 20vw;
+  border-radius: 10px;
 }
 
 .hvd-header-info {
@@ -460,7 +471,8 @@ nav > a {
 }
 
 .host-van-pictures-container > img {
-  width: 8vw;;
+  width: 8vw;
+  border-radius: 5px;
 }
 
 /* FOOTER */
