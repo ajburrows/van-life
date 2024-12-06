@@ -9,7 +9,9 @@ export default function Login() {
     
     const location = useLocation()
     const navigate = useNavigate()
+    const from = location.state?.from || "/host"
 
+    console.log(`from: ${from}`)
     function handleSubmit(e) {
         e.preventDefault()
         setStatus("submitting")
@@ -22,7 +24,7 @@ export default function Login() {
                 else {
                     localStorage.setItem("loggedin", true)
                     setError(null)
-                    navigate("/host", { replace: true })
+                    navigate(from, { replace: true })
                 }
             })
             .finally(() => {
