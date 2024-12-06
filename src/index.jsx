@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Vans from './vans/Vans';
-import VanDetail from './vans/VanDetail';
+import Vans from './pages/vans/Vans';
+import VanDetail from './pages/vans/VanDetail';
 import Layout from "./components/Layout"
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
@@ -12,12 +12,13 @@ import Reviews from './pages/Host/Reviews';
 import HostLayout from './components/HostLayout';
 import HostVans from './pages/Host/HostVans';
 import HostVanDetails from './pages/Host/HostVanDetails';
-
-import "./server"
 import HostVanInfo from './pages/Host/HostVanInfo';
 import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVanPhotos from './pages/Host/HostVanPhotos';
 import NotFound from './NotFound';
+import Login from './Login';
+
+import "./server"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
           <Route path="vans" element={<Vans />} />
           <Route path="vans/:id" element={<VanDetail />} />
           
